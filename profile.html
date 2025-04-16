@@ -1,0 +1,51 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row =>
+                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
+                );
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>{% extends "base.html" %}
+{% block title %}Profile - Rocket Data System{% endblock %}
+{% block content %}
+<div class="form-container">
+    <h2>Update Profile</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="username">Username <span style="color: #ff4081;">*</span></label>
+            <input type="text" id="username" name="username" required value="{{ current_user.username }}">
+        </div>
+        <div class="form-group">
+            <label for="email">Email <span style="color: #ff4081;">*</span></label>
+            <input type="email" id="email" name="email" required value="{{ email }}">
+        </div>
+        <div class="form-group">
+            <label for="password">New Password (optional)</label>
+            <input type="password" id="password" name="password" placeholder="Enter new password">
+        </div>
+        <button type="submit" class="btn">Update</button>
+    </form>
+</div>
+{% endblock %}

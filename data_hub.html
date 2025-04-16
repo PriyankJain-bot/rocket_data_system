@@ -1,0 +1,160 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row =>
+                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
+                );
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>{% extends "base.html" %}
+{% block title %}Data Hub - Rocket Data System{% endblock %}
+{% block content %}
+<div class="card">
+    <h3>Data Hub</h3>
+    <div class="tab-container">
+        <div class="tab-header">
+            <button class="tab-btn active" onclick="showTab('my-data')">My Data</button>
+            <button class="tab-btn" onclick="showTab('thoughts')">Thoughts</button>
+            <button class="tab-btn" onclick="showTab('insights')">Insights</button>
+        </div>
+        <div class="tab-content">
+            <!-- My Data -->
+            <div id="my-data" class="tab-pane active">
+                <h4>My Rocket Data</h4>
+                {% if my_rockets %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Country</th>
+                                <th>Status</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rocket in my_rockets %}
+                                <tr>
+                                    <td>{{ rocket[1] }}</td>
+                                    <td>{{ rocket[2] or 'N/A' }}</td>
+                                    <td>{{ rocket[3] or 'N/A' }}</td>
+                                    <td>{{ rocket[4] or 'N/A' }}</td>
+                                    <td>{{ rocket[6] or 'N/A' }}</td>
+                                    <td>
+                                        {% if rocket[5] %}
+                                            <img src="{{ url_for('static', filename=rocket[5]) }}" alt="{{ rocket[1] }}" width="100">
+                                        {% else %}
+                                            No Image
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>You haven't submitted any rocket data yet.</p>
+                {% endif %}
+            </div>
+            <!-- Thoughts -->
+            <div id="thoughts" class="tab-pane">
+                <h4>Share Your Thoughts</h4>
+                <form method="POST" action="{{ url_for('thoughts') }}">
+                    <div class="form-group">
+                        <textarea name="content" rows="4" placeholder="What's on your mind?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Post Thought</button>
+                </form>
+                <h4>Community Thoughts</h4>
+                {% if thoughts %}
+                    {% for thought in thoughts %}
+                        <div class="thought">
+                            <p><strong>{{ thought[2] }}</strong> <small>{{ thought[1].strftime('%Y-%m-%d %H:%M') }}</small></p>
+                            <p>{{ thought[0] }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No thoughts yet.</p>
+                {% endif %}
+            </div>
+            <!-- Insights -->
+            <div id="insights" class="tab-pane">
+                <h4>Rocket Insights</h4>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h5>By Type</h5>
+                        {% if type_data %}
+                            {% for data in type_data %}
+                                <p>{{ data[0] or 'Unknown' }}: {{ data[1] }}</p>
+                            {% endfor %}
+                        {% else %}
+                            <p>No data available.</p>
+                        {% endif %}
+                    </div>
+                    <div class="stat-card">
+                        <h5>By Country</h5>
+                        {% if country_data %}
+                            {% for data in country_data %}
+                                <p>{{ data[0] or 'Unknown' }}: {{ data[1] }}</p>
+                            {% endfor %}
+                        {% else %}
+                            <p>No data available.</p>
+                        {% endif %}
+                    </div>
+                    <div class="stat-card">
+                        <h5>By Status</h5>
+                        {% if status_data %}
+                            {% for data in status_data %}
+                                <p>{{ data[0] or 'Unknown' }}: {{ data[1] }}</p>
+                            {% endfor %}
+                        {% else %}
+                            <p>No data available.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.tab-container { margin-top: 20px; }
+.tab-header { display: flex; border-bottom: 2px solid #00d4ff; margin-bottom: 20px; }
+.tab-btn { padding: 10px 20px; background: none; border: none; color: #00d4ff; font-size: 16px; cursor: pointer; transition: background 0.3s ease; }
+.tab-btn:hover, .tab-btn.active { background: rgba(0, 212, 255, 0.2); color: #fff; }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+.thought { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 0; }
+.thought:last-child { border-bottom: none; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.stat-card { background: rgba(0, 212, 255, 0.1); padding: 20px; border-radius: 8px; text-align: center; }
+</style>
+<script>
+function showTab(tabId) {
+    document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+}
+</script>
+{% endblock %}

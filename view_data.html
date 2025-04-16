@@ -1,0 +1,131 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row =>
+                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
+                );
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>{% extends "base.html" %}
+{% block title %}All Data - Rocket Data System{% endblock %}
+{% block content %}
+<div class="card">
+    <h3>All Data</h3>
+    <!-- Rocket Data -->
+    <div class="section">
+        <h4>Rocket Data</h4>
+        {% if rockets %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Country</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rocket in rockets %}
+                        <tr>
+                            <td>{{ rocket[1] }}</td>
+                            <td>{{ rocket[2] or 'N/A' }}</td>
+                            <td>{{ rocket[3] or 'N/A' }}</td>
+                            <td>{{ rocket[4] or 'N/A' }}</td>
+                            <td>{{ rocket[6] or 'N/A' }}</td>
+                            <td>
+                                {% if rocket[5] %}
+                                    <img src="{{ url_for('static', filename=rocket[5]) }}" alt="{{ rocket[1] }}" width="100">
+                                {% else %}
+                                    No Image
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No rocket data available.</p>
+        {% endif %}
+    </div>
+    <!-- Comments -->
+    <div class="section">
+        <h4>Comments</h4>
+        {% if comments %}
+            {% for comment in comments %}
+                <div class="thought">
+                    <p><strong>{{ comment[2] }}</strong> <small>{{ comment[1].strftime('%Y-%m-%d %H:%M') }}</small></p>
+                    <p>{{ comment[0] }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No comments available.</p>
+        {% endif %}
+    </div>
+    <!-- Insights -->
+    <div class="section">
+        <h4>Insights</h4>
+        <div class="stats">
+            <div class="stat-card">
+                <h5>By Type</h5>
+                {% if type_data %}
+                    {% for data in type_data %}
+                        <p>{{ data[0] or 'Unknown' }}: {{ data[1] }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>No data available.</p>
+                {% endif %}
+            </div>
+            <div class="stat-card">
+                <h5>By Country</h5>
+                {% if country_data %}
+                    {% for data in country_data %}
+                        <p>{{ data[0] or 'Unknown' }}: {{ data[1] }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>No data available.</p>
+                {% endif %}
+            </div>
+            <div class="stat-card">
+                <h5>By Status</h5>
+                {% if status_data %}
+                    {% for data in status_data %}
+                        <p>{{ data[0] or 'Unknown' }}: {{ data[1] }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>No data available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.section { margin-bottom: 40px; }
+.thought { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 0; }
+.thought:last-child { border-bottom: none; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.stat-card { background: rgba(0, 212, 255, 0.1); padding: 20px; border-radius: 8px; text-align: center; }
+</style>
+{% endblock %}

@@ -1,0 +1,217 @@
+2025-04-16 12:29:01,165 - INFO - Flask app starting...
+2025-04-16 12:29:01,165 - INFO - Flask app starting...
+2025-04-16 12:29:01,165 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:29:01,165 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:29:02,307 - ERROR - Error running WSGI application
+2025-04-16 12:29:02,309 - ERROR - AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:29:02,309 - ERROR -   File "/var/www/cooldbms_pythonanywhere_com_wsgi.py", line 14, in <module>
+2025-04-16 12:29:02,310 - ERROR -     from app import app as application  # noqa
+2025-04-16 12:29:02,310 - ERROR - 
+2025-04-16 12:29:02,310 - ERROR -   File "/home/cooldbms/rocket_data_system/app.py", line 31, in <module>
+2025-04-16 12:29:02,310 - ERROR -     with mysql.connection.cursor() as cur:
+2025-04-16 12:29:02,310 - ERROR - ***************************************************
+2025-04-16 12:29:02,310 - ERROR - If you're seeing an import error and don't know why,
+2025-04-16 12:29:02,310 - ERROR - we have a dedicated help page to help you debug: 
+2025-04-16 12:29:02,311 - ERROR - https://help.pythonanywhere.com/pages/DebuggingImportError/
+2025-04-16 12:29:02,311 - ERROR - ***************************************************
+2025-04-16 12:29:05,088 - ERROR - Error running WSGI application
+2025-04-16 12:29:05,089 - ERROR - AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:29:05,090 - ERROR -   File "/var/www/cooldbms_pythonanywhere_com_wsgi.py", line 14, in <module>
+2025-04-16 12:29:05,090 - ERROR -     from app import app as application  # noqa
+2025-04-16 12:29:05,090 - ERROR - 
+2025-04-16 12:29:05,090 - ERROR -   File "/home/cooldbms/rocket_data_system/app.py", line 31, in <module>
+2025-04-16 12:29:05,090 - ERROR -     with mysql.connection.cursor() as cur:
+2025-04-16 12:29:05,090 - ERROR - ***************************************************
+2025-04-16 12:29:05,090 - ERROR - If you're seeing an import error and don't know why,
+2025-04-16 12:29:05,090 - ERROR - we have a dedicated help page to help you debug: 
+2025-04-16 12:29:05,091 - ERROR - https://help.pythonanywhere.com/pages/DebuggingImportError/
+2025-04-16 12:29:05,091 - ERROR - ***************************************************
+2025-04-16 12:29:08,147 - ERROR - Error running WSGI application
+2025-04-16 12:29:08,148 - ERROR - AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:29:08,148 - ERROR -   File "/var/www/cooldbms_pythonanywhere_com_wsgi.py", line 14, in <module>
+2025-04-16 12:29:08,148 - ERROR -     from app import app as application  # noqa
+2025-04-16 12:29:08,149 - ERROR - 
+2025-04-16 12:29:08,149 - ERROR -   File "/home/cooldbms/rocket_data_system/app.py", line 31, in <module>
+2025-04-16 12:29:08,149 - ERROR -     with mysql.connection.cursor() as cur:
+2025-04-16 12:29:08,149 - ERROR - ***************************************************
+2025-04-16 12:29:08,149 - ERROR - If you're seeing an import error and don't know why,
+2025-04-16 12:29:08,149 - ERROR - we have a dedicated help page to help you debug: 
+2025-04-16 12:29:08,149 - ERROR - https://help.pythonanywhere.com/pages/DebuggingImportError/
+2025-04-16 12:29:08,149 - ERROR - ***************************************************
+2025-04-16 12:29:11,952 - ERROR - Error running WSGI application
+2025-04-16 12:29:11,953 - ERROR - AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:29:11,953 - ERROR -   File "/var/www/cooldbms_pythonanywhere_com_wsgi.py", line 14, in <module>
+2025-04-16 12:29:11,953 - ERROR -     from app import app as application  # noqa
+2025-04-16 12:29:11,953 - ERROR - 
+2025-04-16 12:29:11,953 - ERROR -   File "/home/cooldbms/rocket_data_system/app.py", line 31, in <module>
+2025-04-16 12:29:11,953 - ERROR -     with mysql.connection.cursor() as cur:
+2025-04-16 12:29:11,953 - ERROR - ***************************************************
+2025-04-16 12:29:11,954 - ERROR - If you're seeing an import error and don't know why,
+2025-04-16 12:29:11,954 - ERROR - we have a dedicated help page to help you debug: 
+2025-04-16 12:29:11,954 - ERROR - https://help.pythonanywhere.com/pages/DebuggingImportError/
+2025-04-16 12:29:11,954 - ERROR - ***************************************************
+2025-04-16 12:30:33,848 - INFO - Flask app starting...
+2025-04-16 12:30:33,848 - INFO - Flask app starting...
+2025-04-16 12:30:33,849 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:30:33,849 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:30:52,929 - INFO - Flask app starting...
+2025-04-16 12:30:52,929 - INFO - Flask app starting...
+2025-04-16 12:30:52,929 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:30:52,929 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:30:54,317 - ERROR - Error running WSGI application
+2025-04-16 12:30:54,319 - ERROR - AttributeError: module 'cooldbms_pythonanywhere_com_wsgi' has no attribute 'application'
+2025-04-16 12:30:54,319 - ERROR - ***************************************************
+2025-04-16 12:30:54,319 - ERROR - If you're seeing an import error and don't know why,
+2025-04-16 12:30:54,319 - ERROR - we have a dedicated help page to help you debug: 
+2025-04-16 12:30:54,319 - ERROR - https://help.pythonanywhere.com/pages/DebuggingImportError/
+2025-04-16 12:30:54,319 - ERROR - ***************************************************
+2025-04-16 12:31:02,390 - INFO - Flask app starting...
+2025-04-16 12:31:02,390 - INFO - Flask app starting...
+2025-04-16 12:31:02,390 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:31:02,390 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:31:03,502 - ERROR - Error running WSGI application
+2025-04-16 12:31:03,504 - ERROR - AttributeError: module 'cooldbms_pythonanywhere_com_wsgi' has no attribute 'application'
+2025-04-16 12:31:03,504 - ERROR - ***************************************************
+2025-04-16 12:31:03,505 - ERROR - If you're seeing an import error and don't know why,
+2025-04-16 12:31:03,505 - ERROR - we have a dedicated help page to help you debug: 
+2025-04-16 12:31:03,505 - ERROR - https://help.pythonanywhere.com/pages/DebuggingImportError/
+2025-04-16 12:31:03,505 - ERROR - ***************************************************
+2025-04-16 12:31:09,121 - ERROR - Error running WSGI application
+2025-04-16 12:31:09,122 - ERROR - AttributeError: module 'cooldbms_pythonanywhere_com_wsgi' has no attribute 'application'
+2025-04-16 12:31:09,122 - ERROR - ***************************************************
+2025-04-16 12:31:09,122 - ERROR - If you're seeing an import error and don't know why,
+2025-04-16 12:31:09,122 - ERROR - we have a dedicated help page to help you debug: 
+2025-04-16 12:31:09,123 - ERROR - https://help.pythonanywhere.com/pages/DebuggingImportError/
+2025-04-16 12:31:09,123 - ERROR - ***************************************************
+2025-04-16 12:34:34,139 - INFO - Flask app starting...
+2025-04-16 12:34:34,139 - INFO - Flask app starting...
+2025-04-16 12:34:34,139 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:34:34,139 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:34:56,519 - INFO - Flask app starting...
+2025-04-16 12:34:56,519 - INFO - Flask app starting...
+2025-04-16 12:34:56,519 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:34:56,519 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:36:42,749 - INFO - Flask app starting...
+2025-04-16 12:36:42,749 - INFO - Flask app starting...
+2025-04-16 12:36:42,750 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:36:42,750 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:37:35,234 - ERROR - Error fetching trending rockets: 'NoneType' object has no attribute 'connection'
+2025-04-16 12:37:35,234 - ERROR - Error fetching trending rockets: 'NoneType' object has no attribute 'connection'
+2025-04-16 12:37:44,725 - ERROR - Error fetching trending rockets: 'NoneType' object has no attribute 'connection'
+2025-04-16 12:37:44,725 - ERROR - Error fetching trending rockets: 'NoneType' object has no attribute 'connection'
+2025-04-16 12:38:10,985 - ERROR - Registration error: 'NoneType' object has no attribute 'connection'
+2025-04-16 12:38:10,985 - ERROR - Registration error: 'NoneType' object has no attribute 'connection'
+2025-04-16 12:38:27,632 - ERROR - Registration error: 'NoneType' object has no attribute 'connection'
+2025-04-16 12:38:27,632 - ERROR - Registration error: 'NoneType' object has no attribute 'connection'
+2025-04-16 12:43:04,777 - INFO - Flask app starting...
+2025-04-16 12:43:04,777 - INFO - Flask app starting...
+2025-04-16 12:43:04,778 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:43:04,778 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:43:10,921 - INFO - Successful registration: username=CS23I1017, email=cs23i1017@iiitdm.ac.in
+2025-04-16 12:43:10,921 - INFO - Successful registration: username=CS23I1017, email=cs23i1017@iiitdm.ac.in
+2025-04-16 12:43:25,554 - INFO - Successful login: CS23I1017 as user
+2025-04-16 12:43:25,554 - INFO - Successful login: CS23I1017 as user
+2025-04-16 12:43:55,356 - INFO - Successful data submission: name=Falcon 9, user=CS23I1017
+2025-04-16 12:43:55,356 - INFO - Successful data submission: name=Falcon 9, user=CS23I1017
+2025-04-16 12:44:05,487 - INFO - Thought posted by CS23I1017: Hehe...
+2025-04-16 12:44:05,487 - INFO - Thought posted by CS23I1017: Hehe...
+2025-04-16 12:44:21,884 - INFO - Contact message sent by CS23I1017
+2025-04-16 12:44:21,884 - INFO - Contact message sent by CS23I1017
+2025-04-16 12:44:33,885 - ERROR - Profile update error: 'User' object has no attribute 'email'
+2025-04-16 12:44:33,885 - ERROR - Profile update error: 'User' object has no attribute 'email'
+2025-04-16 12:44:48,270 - INFO - Logout: user=CS23I1017
+2025-04-16 12:44:48,270 - INFO - Logout: user=CS23I1017
+2025-04-16 12:44:55,120 - INFO - Successful login: CS23I1017 as user
+2025-04-16 12:44:55,120 - INFO - Successful login: CS23I1017 as user
+2025-04-16 12:48:04,114 - INFO - Flask app starting...
+2025-04-16 12:48:04,114 - INFO - Flask app starting...
+2025-04-16 12:48:04,115 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:48:04,115 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:48:15,722 - INFO - Logout: user=CS23I1017
+2025-04-16 12:48:15,722 - INFO - Logout: user=CS23I1017
+2025-04-16 12:48:22,565 - INFO - Successful login: CS23I1017 as user
+2025-04-16 12:48:22,565 - INFO - Successful login: CS23I1017 as user
+2025-04-16 12:55:20,455 - INFO - Flask app starting...
+2025-04-16 12:55:20,455 - INFO - Flask app starting...
+2025-04-16 12:55:20,455 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 12:55:20,455 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:01:35,406 - INFO - Flask app starting...
+2025-04-16 13:01:35,406 - INFO - Flask app starting...
+2025-04-16 13:01:35,406 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:01:35,406 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:02:12,001 - INFO - Logout: user=CS23I1017
+2025-04-16 13:02:12,001 - INFO - Logout: user=CS23I1017
+2025-04-16 13:06:30,270 - INFO - Flask app starting...
+2025-04-16 13:06:30,270 - INFO - Flask app starting...
+2025-04-16 13:06:30,270 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:06:30,270 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:07:48,944 - INFO - Flask app starting...
+2025-04-16 13:07:48,944 - INFO - Flask app starting...
+2025-04-16 13:07:48,944 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:07:48,944 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:10:31,868 - INFO - Flask app starting...
+2025-04-16 13:10:31,868 - INFO - Flask app starting...
+2025-04-16 13:10:31,868 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:10:31,868 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:16:16,405 - INFO - Flask app starting...
+2025-04-16 13:16:16,405 - INFO - Flask app starting...
+2025-04-16 13:16:16,405 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:16:16,405 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:22:29,830 - INFO - Flask app starting...
+2025-04-16 13:22:29,830 - INFO - Flask app starting...
+2025-04-16 13:22:29,830 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:22:29,830 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:23:16,563 - INFO - Successful login: CS23I1017 as user
+2025-04-16 13:23:16,563 - INFO - Successful login: CS23I1017 as user
+2025-04-16 13:25:32,619 - INFO - Flask app starting...
+2025-04-16 13:25:32,619 - INFO - Flask app starting...
+2025-04-16 13:25:32,619 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:25:32,619 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:30:43,407 - INFO - Flask app starting...
+2025-04-16 13:30:43,407 - INFO - Flask app starting...
+2025-04-16 13:30:43,407 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:30:43,407 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 13:30:58,981 - INFO - Successful login: CS23I1017 as user
+2025-04-16 13:30:58,981 - INFO - Successful login: CS23I1017 as user
+2025-04-16 13:31:09,711 - INFO - Logout: user=CS23I1017
+2025-04-16 13:31:09,711 - INFO - Logout: user=CS23I1017
+2025-04-16 18:34:43,062 - INFO - Successful registration: username=Hari, email=yharith16@gmail.com
+2025-04-16 18:34:43,062 - INFO - Successful registration: username=Hari, email=yharith16@gmail.com
+2025-04-16 18:34:53,849 - WARNING - Failed login: username=Hari, role=admin
+2025-04-16 18:34:53,849 - WARNING - Failed login: username=Hari, role=admin
+2025-04-16 18:35:04,056 - INFO - Successful login: Hari as user
+2025-04-16 18:35:04,056 - INFO - Successful login: Hari as user
+2025-04-16 18:35:46,547 - INFO - Thought posted by Hari: What hehe...
+2025-04-16 18:35:46,547 - INFO - Thought posted by Hari: What hehe...
+2025-04-16 18:36:23,993 - INFO - Contact message sent by Hari
+2025-04-16 18:36:23,993 - INFO - Contact message sent by Hari
+2025-04-16 18:36:32,337 - INFO - Logout: user=Hari
+2025-04-16 18:36:32,337 - INFO - Logout: user=Hari
+2025-04-16 18:40:41,391 - WARNING - Registration failed: username=whydbms, email=cs23i1017@iiitdm.ac.in already exists
+2025-04-16 18:40:41,391 - WARNING - Registration failed: username=whydbms, email=cs23i1017@iiitdm.ac.in already exists
+2025-04-16 18:40:58,458 - WARNING - Registration failed: username=hellouser, email=cs23i1017@iiitdm.ac.in already exists
+2025-04-16 18:40:58,458 - WARNING - Registration failed: username=hellouser, email=cs23i1017@iiitdm.ac.in already exists
+2025-04-16 18:41:34,707 - WARNING - Registration failed: username=hehe, email=cs23i1017@iiitdm.ac.in already exists
+2025-04-16 18:41:34,707 - WARNING - Registration failed: username=hehe, email=cs23i1017@iiitdm.ac.in already exists
+2025-04-16 18:43:57,124 - INFO - Successful registration: username=hellouser, email=priyankjain4813@gmail.com
+2025-04-16 18:43:57,124 - INFO - Successful registration: username=hellouser, email=priyankjain4813@gmail.com
+2025-04-16 18:44:21,886 - INFO - Successful login: hellouser as user
+2025-04-16 18:44:21,886 - INFO - Successful login: hellouser as user
+2025-04-16 18:47:17,858 - INFO - Successful data submission: name=Eagle, user=hellouser
+2025-04-16 18:47:17,858 - INFO - Successful data submission: name=Eagle, user=hellouser
+2025-04-16 19:07:24,457 - INFO - Successful registration: username=user100, email=user100@gmail.com
+2025-04-16 19:07:24,457 - INFO - Successful registration: username=user100, email=user100@gmail.com
+2025-04-16 19:07:40,867 - INFO - Successful login: user100 as user
+2025-04-16 19:07:40,867 - INFO - Successful login: user100 as user
+2025-04-16 19:09:07,430 - INFO - Successful data submission: name=falcon 9 , user=user100
+2025-04-16 19:09:07,430 - INFO - Successful data submission: name=falcon 9 , user=user100
+2025-04-16 19:09:46,510 - INFO - Successful data submission: name=spacex, user=user100
+2025-04-16 19:09:46,510 - INFO - Successful data submission: name=spacex, user=user100
+2025-04-16 19:10:13,803 - INFO - Thought posted by user100: make hay while sunshines ...
+2025-04-16 19:10:13,803 - INFO - Thought posted by user100: make hay while sunshines ...
+2025-04-16 19:10:54,042 - INFO - Contact message sent by user100
+2025-04-16 19:10:54,042 - INFO - Contact message sent by user100
+2025-04-16 22:37:12,931 - INFO - Flask app starting...
+2025-04-16 22:37:12,931 - INFO - Flask app starting...
+2025-04-16 22:37:12,932 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
+2025-04-16 22:37:12,932 - ERROR - Failed to initialize MySQL: 'NoneType' object has no attribute 'cursor'
